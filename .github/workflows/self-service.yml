@@ -8,4 +8,11 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello World rc1.0"
+      - name: Print
+        run: echo "Hello World rc1.0"
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }} 
+      - name: Cat repo
+        run: cat mytxt
